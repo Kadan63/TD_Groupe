@@ -14,6 +14,6 @@
     <h1><?php echo $getDetail->title;?></h1>
     <p><?php echo $getDetail->description;?></p>
     <p><?php echo $getDetail->price;?></p>
-
+    <a href="<?php echo $url ?>product"><button>Retourner à l'accueil</button></a>
 </body>
 </html>
