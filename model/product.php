@@ -57,7 +57,7 @@
             try{
                 $dbc = new PDO("mysql:host=$servername;dbname=$bddname;charset=utf8", $username, $password);
                 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "UPDATE `product` SET `idProduct`='{$_POST['idProduct']}',`idCategory`='{$_POST['idCategory']}',`title`='{$_POST['nom']}',`description`='{$_POST['description']}',`price`='{$_POST['prix']}',`pictureFront`='',`pictureBack`='' WHERE 1";
+                $sql = "UPDATE `product` SET `idProduct`='{$_POST['idProduct']}', `title`='{$_POST['nom']}',`description`='{$_POST['description']}',`price`='{$_POST['prix']}',`pictureFront`='',`pictureBack`='' WHERE 'idProduct'={$_POST['idProduct']}";
                 $dbc->exec($sql);
             }
             catch(PDOException $e){

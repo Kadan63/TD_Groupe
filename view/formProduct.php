@@ -12,7 +12,6 @@
 <body>
     <form method='post' action="/TD_Groupe/traitement">
     <input type="hidden" value="<?php echo $getDetail->idProduct; ?>" name="idProduct">
-    <input type="hidden" value="<?php echo $getDetail->idCategory; ?>" name="idCategory">
         <p>
             <label for="name">Nom</label>
             <input type="text" name="nom" id="name" value="<?php echo $getDetail->title; ?>"/> 
