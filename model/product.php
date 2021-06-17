@@ -65,7 +65,7 @@
                 echo "Erreur code : ". $e->getCode();
             }
         }
-        public function addProduct($idProduct, $idCategory, $title, $description, $price){
+        public function addProduct($idCategory, $title, $description, $price){
             $servername = 'localhost';
             $username = 'root';
             $password = '';
@@ -74,7 +74,7 @@
             try{
                 $dbc = new PDO("mysql:host=$servername;dbname=$bddname;charset=utf8", $username, $password);
                 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "INSERT INTO `product`(`idProduct`, `idCategory`, `title`, `description`, `price`) VALUES ('$idProduct', '$idCategory', '$title', '$description', '$price')";
+                $sql = "INSERT INTO `product`(`idCategory`, `title`, `description`, `price`) VALUES ('$idCategory', '$title', '$description', '$price')";
                 $dbc->exec($sql);
             }
             catch(PDOException $e){
