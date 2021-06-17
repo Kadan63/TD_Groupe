@@ -1,4 +1,4 @@
-<?php include 'controller/instanceProduit.php'; 
+<?php include 'controller/instanceProduit.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,41 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body><?php if (!empty($aParam[3])): ?>
-    <form method='post' action="<?php echo $url ?>product/<?php echo $getDetail->idProduct?>/oskoure">
-    <input type="hidden" value="<?php echo $getDetail->idProduct; ?>" name="idProduct">
+<body>
+    <form method='post' action="<?php echo $url ?>product/<?php if (!empty($aParam[3])): echo $getDetail->idProduct."/"; endif; ?>oskoure">
+    <input type="hidden" value="<?php if (!empty($aParam[3])): echo $getDetail->idProduct; endif; ?>" name="idProduct">
         <p>
             <label for="name">Nom</label>
-            <input type="text" name="nom" id="name" value="<?php echo $getDetail->title; ?>"/> 
+            <input type="text" name="nom" id="name" value="<?php if (!empty($aParam[3])): echo $getDetail->title; endif; ?>"/>
         </p>
         <p>
             <label for="description">Description</label>
-            <textarea name="description" id="description"><?php echo $getDetail->description; ?></textarea>
+            <textarea name="description" id="description"><?php if (!empty($aParam[3])): echo $getDetail->description; endif; ?></textarea>
         </p>
         <p>
             <label for="price">Prix</label>
-            <input type="text" name="prix" id="price" value="<?php echo $getDetail->price; ?>"/> 
+            <input type="text" name="prix" id="price" value="<?php if (!empty($aParam[3])): echo $getDetail->price; endif; ?>"/>
         </p>
         <p><input type="submit" value="Valider">
         </p>
     </form>
-    <?php else :?>
-    <form method='post' action="<?php echo $url ?>product/oskoure">
-        <p>
-            <label for="name">Nom</label>
-            <input type="text" name="nom" id="name" value=""/> 
-        </p>
-        <p>
-            <label for="description">Description</label>
-            <textarea name="description" id="description"></textarea>
-        </p>
-        <p>
-            <label for="price">Prix</label>
-            <input type="text" name="prix" id="price" value=""/> 
-        </p>
-        <p><input type="submit" value="Valider">
-        </p>
-    </form> 
-    <?php endif; ?>
 </body>
 </html>
