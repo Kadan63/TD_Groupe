@@ -65,5 +65,22 @@
                 echo "Erreur code : ". $e->getCode();
             }
         }
+        public function addProduct($idProduct, $idCategory, $title, $description, $price){
+            $servername = 'localhost';
+            $username = 'root';
+            $password = '';
+            $bddname = 'shoptoncafe2.0';
+
+            try{
+                $dbc = new PDO("mysql:host=$servername;dbname=$bddname;charset=utf8", $username, $password);
+                $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "INSERT INTO `product`(`idProduct`, `idCategory`, `title`, `description`, `price`) VALUES ('$idProduct', '$idCategory', '$title', '$description', '$price')";
+                $dbc->exec($sql);
+            }
+            catch(PDOException $e){
+                echo "Erreur : " . $e->getMessage();
+                echo "Erreur code : ". $e->getCode();
+            }
+        }
     }
 ?>

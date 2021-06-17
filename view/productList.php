@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Liste des produits</h1>
-    <a href="" title="Ajouter">Ajouter un nouveau produit</a>
+    <a href="<?php echo $url?>form" title="Ajouter">Ajouter un nouveau produit</a>
     <table style="border:1px solid black;width:100%;">
         <tr >
             <th style="text-align:left;">Nom</th>
