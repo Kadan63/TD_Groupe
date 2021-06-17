@@ -14,7 +14,7 @@
     <input type="hidden" value="<?php if (!empty($aParam[3])): echo $getDetail->idProduct; endif; ?>" name="idProduct">
         <p>
             <label for="name">Nom</label>
-            <input type="text" name="nom" id="name" value="<?php if (!empty($aParam[3])): echo $getDetail->title; endif; ?>"/>
+            <input type="text" name="nom" id="name" <?php if (!empty($aParam[3])): ?> value="<?php echo $getDetail->title; ?>"<?php endif; ?>/>
         </p>
         <p>
             <label for="description">Description</label>
@@ -22,7 +22,7 @@
         </p>
         <p>
             <label for="price">Prix</label>
-            <input type="text" name="prix" id="price" value="<?php if (!empty($aParam[3])): echo $getDetail->price; endif; ?>"/>
+            <input type="text" name="prix" id="price" <?php if (!empty($aParam[3])): ?> value="<?php echo $getDetail->price; ?>"<?php endif; ?>/>
         </p>
         <p><input type="submit" value="Valider">
         </p>
