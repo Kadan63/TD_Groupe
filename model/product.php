@@ -48,7 +48,7 @@
                 echo "Erreur code : ". $e->getCode();
             }
         }
-        public function modifyProduct(){
+        public function modifyProduct($idProduct, $title, $description, $price){
             $servername = 'localhost';
             $username = 'root';
             $password = '';
@@ -57,7 +57,7 @@
             try{
                 $dbc = new PDO("mysql:host=$servername;dbname=$bddname;charset=utf8", $username, $password);
                 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "UPDATE `product` SET `idProduct`='{$_POST['idProduct']}', `title`='{$_POST['nom']}',`description`='{$_POST['description']}',`price`='{$_POST['prix']}',`pictureFront`='',`pictureBack`='' WHERE `idProduct`='{$_POST['idProduct']}'";
+                $sql = "UPDATE `product` SET `title`='$title',`description`='$description',`price`='$price' WHERE `idProduct`='$idProduct'";
                 $dbc->exec($sql);
             }
             catch(PDOException $e){
