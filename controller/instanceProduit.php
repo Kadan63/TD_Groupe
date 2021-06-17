@@ -9,7 +9,11 @@ endif;
 if (!empty($aParam[3])) : 
     if($aParam[3]=='oskoure') :
         $product->addProduct(2, $_POST['nom'], $_POST['description'], $_POST['prix']); 
+        header("Location: {$url}product");
     endif;
+endif;
+if(!empty($aParam[3])AND($aParam[2]=='product')) : 
+    $product->deleteProduct($aParam[3]);
 endif;
 $getProducts = $product->listProduct();
 if (!empty($aParam[3])AND($aParam[3]!='oskoure')) {

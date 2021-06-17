@@ -82,5 +82,22 @@
                 echo "Erreur code : ". $e->getCode();
             }
         }
+        public function deleteProduct($idProduct){
+            $servername = 'localhost';
+            $username = 'root';
+            $password = '';
+            $bddname = 'shoptoncafe2.0';
+
+            try{
+                $dbc = new PDO("mysql:host=$servername;dbname=$bddname;charset=utf8", $username, $password);
+                $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                $sql = "DELETE FROM `product` WHERE `idProduct`='$idProduct'";
+                $dbc->exec($sql);
+            }
+            catch(PDOException $e){
+                echo "Erreur : " . $e->getMessage();
+                echo "Erreur code : ". $e->getCode();
+            }
+        }
     }
 ?>
