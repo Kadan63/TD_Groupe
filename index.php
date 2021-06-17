@@ -6,14 +6,17 @@ $aParam = explode("/", $serveur);
 var_dump($aParam);
 
 switch ($aParam[2]) {
+
     case 'product':
-        include 'view/productList.php';
-        break;
+    include 'view/productList.php';
+    break;
+
     case 'detail':
-        include 'view/detail.php';
-        break;
+    include 'view/detail.php';
+    break;
+
     default:
-        include 'view/404.php';
-        break;
+    include 'view/404.php';
+    break;
 }
 ?>
