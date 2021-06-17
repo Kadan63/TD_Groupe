@@ -1,5 +1,5 @@
 <?php include 'controller/instanceProduit.php';
-var_dump($getDetail);?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">

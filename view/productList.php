@@ -21,8 +21,8 @@
         <tr>
             <td><?php echo $info->title;?></td>
             <td><?php echo $info->price;?></td>
-            <td><a href="detail/<?php echo $info->idProduct ?>">En savoir plus</a></td>
-            <td><a href="form/<?php echo $info->idProduct ?>" title="Modifier">Modifier</a></td>
+            <td><a href="<?php echo $url ?>detail/<?php echo $info->idProduct ?>">En savoir plus</a></td>
+            <td><a href="<?php echo $url ?>form/<?php echo $info->idProduct ?>" title="Modifier">Modifier</a></td>
             <td><a href="" title="Supprimer">Supprimer</a></td>
         </tr>
         <?php endforeach; ?>

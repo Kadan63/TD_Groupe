@@ -3,7 +3,6 @@
 $serveur = $_SERVER['REQUEST_URI'];
 $aParam = explode("/", $serveur);
 
-var_dump($aParam);
 
 switch ($aParam[2]) {
 

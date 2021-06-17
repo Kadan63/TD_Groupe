@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method='post' action="/TD_Groupe/traitement">
+    <form method='post' action="<?php echo $url ?>product/<?php echo $getDetail->idProduct?>/oskoure">
     <input type="hidden" value="<?php echo $getDetail->idProduct; ?>" name="idProduct">
         <p>
             <label for="name">Nom</label>
