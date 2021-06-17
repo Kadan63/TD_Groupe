@@ -15,6 +15,14 @@ switch ($aParam[2]) {
     include 'view/detail.php';
     break;
 
+    case 'form':
+        include 'view/formProduct.php';
+        break;
+
+    case 'traitement':
+        include 'view/traitement.php';
+        break;
+
     default:
     include 'view/404.php';
     break;
