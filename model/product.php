@@ -10,13 +10,34 @@
             $password = '';
             $bddname = 'shoptoncafe2.0';
     
-            echo 'BDD Connectée.';
     
             try{
-                $dbc = new PDO("mysql:host=$servername;dbname=$bddname", $username, $password);
+                $dbc = new PDO("mysql:host=$servername;dbname=$bddname;charset=utf8", $username, $password);
                 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
                 $sql = 'SELECT * FROM product';
+                $result = $dbc->query($sql);
+                $products=$result->fetchAll(PDO::FETCH_OBJ);
+                $result->closeCursor();
+                return $products;
+            }
+            catch(PDOException $e){
+                echo "Erreur : " . $e->getMessage();
+                echo "Erreur code : ". $e->getCode();
+            }
+        }
+        public function detailProduct($id){
+
+            $servername = 'localhost';
+            $username = 'root';
+            $password = '';
+            $bddname = 'shoptoncafe2.0';
+
+            try{
+                $dbc = new PDO("mysql:host=$servername;dbname=$bddname;charset=utf8", $username, $password);
+                $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+                $sql = "SELECT * FROM product WHERE idProduct=$id";
                 $result = $dbc->query($sql);
                 $products=$result->fetchAll(PDO::FETCH_OBJ);
                 $result->closeCursor();
