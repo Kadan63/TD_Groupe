@@ -9,12 +9,12 @@
             $username = 'root';
             $password = '';
             $bddname = 'shoptoncafe2.0';
-    
-    
+
+
             try{
                 $dbc = new PDO("mysql:host=$servername;dbname=$bddname;charset=utf8", $username, $password);
                 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+
                 $sql = 'SELECT * FROM product';
                 $result = $dbc->query($sql);
                 $products=$result->fetchAll(PDO::FETCH_OBJ);
@@ -36,10 +36,10 @@
             try{
                 $dbc = new PDO("mysql:host=$servername;dbname=$bddname;charset=utf8", $username, $password);
                 $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
+
                 $sql = "SELECT * FROM product WHERE idProduct=$id";
                 $result = $dbc->query($sql);
-                $products=$result->fetchAll(PDO::FETCH_OBJ);
+                $products=$result->fetch(PDO::FETCH_OBJ);
                 $result->closeCursor();
                 return $products;
             }

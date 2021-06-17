@@ -1,4 +1,5 @@
-<?php include 'controller/instanceProduit.php' ?>
+<?php include 'controller/instanceProduit.php';
+var_dump($getDetail);?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,6 @@
     <h1><?php echo $getDetail->title;?></h1>
     <p><?php echo $getDetail->description;?></p>
     <p><?php echo $getDetail->price;?></p>
-    
+
 </body>
 </html>
