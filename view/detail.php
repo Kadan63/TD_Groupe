@@ -11,9 +11,9 @@
 </head>
 <body>
 
-    <h1><?php echo $getDetail->title;?></h1>
-    <p><?php echo $getDetail->description;?></p>
-    <p><?php echo $getDetail->price;?></p>
+    <h1><?php echo $getDetail[0]->title;?></h1>
+    <p><?php echo $getDetail[0]->description;?></p>
+    <p><?php echo $getDetail[0]->price;?></p>
     <a href="<?php echo $url ?>product"><button>Retourner à l'accueil</button></a>
 </body>
 </html>

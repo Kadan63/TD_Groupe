@@ -23,11 +23,11 @@
             <td><?php echo $info->price;?></td>
             <td><a href="<?php echo $url ?>detail/<?php echo $info->idProduct ?>">En savoir plus</a></td>
             <td><a href="<?php echo $url ?>form/<?php echo $info->idProduct ?>" title="Modifier">Modifier</a></td>
-            <td><a href="<?php echo $url ?>product/<?php echo $info->idProduct ?>" title="Supprimer">Supprimer</a></td>
+            <td><a href="<?php echo $url ?>product/<?php echo $info->idProduct ?>/delete" title="Supprimer">Supprimer</a></td>
         </tr>
         <?php endforeach; ?>
     </table>
-    
+
 
 </body>
 </html>
