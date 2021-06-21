@@ -22,19 +22,21 @@ switch ($aParam[2]) {
         break;
 
         case 'api':
-            if (!empty ($aParam[2]) AND $aParam[3]=='products' AND $_SERVER['REQUEST_METHOD']=="POST"):
+        if (!empty ($aParam[2]) AND $aParam[3]=='products' AND $_SERVER['REQUEST_METHOD']=="POST" AND $_POST['product'] != "ajout") :
+            include 'view/apijsonmodifproduct.php';
+            elseif (!empty ($aParam[2]) AND $aParam[3]=='products' AND $_SERVER['REQUEST_METHOD']=="POST"):
                 include 'view/apijsonaddproduct.php';
-            elseif (!empty ($aParam[2]) AND $aParam[3]=='products' AND !empty($aParam[4])) :
-                include 'view/apijsonproductdetail.php';
-            elseif (!empty ($aParam[2]) AND $aParam[3]=='products' AND empty($aParam[4])) :
-                    include 'view/apijsonproduct.php'; 
-            endif;
-        break;
-        case 'formapi' :
-            include 'view/formApi.php';
-            break;
-        default:
-        include 'view/404.php';
-        break;
-    }
-    ?>
+                elseif (!empty ($aParam[2]) AND $aParam[3]=='products' AND !empty($aParam[4])) :
+                    include 'view/apijsonproductdetail.php';
+                    elseif (!empty ($aParam[2]) AND $aParam[3]=='products' AND empty($aParam[4])) :
+                        include 'view/apijsonproduct.php';
+                    endif;
+                    break;
+                    case 'formapi' :
+                        include 'view/formApi.php';
+                        break;
+                        default:
+                        include 'view/404.php';
+                        break;
+                    }
+                    ?>

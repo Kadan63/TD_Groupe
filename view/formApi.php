@@ -28,7 +28,7 @@
             <select id="selectProduct" name="product">
             <option value="ajout" selected>Ajout</option>
             <?php foreach ($getProducts as $value) : ?>
-            <option value="<?php echo $value->title; ?>"><?php echo $value->title; ?></option>
+            <option value="<?php echo $value->idProduct; ?>"><?php echo $value->title; ?></option>
             <?php endforeach; ?>
             </select>
         </p>
