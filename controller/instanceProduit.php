@@ -17,7 +17,7 @@ if (!empty($aParam[4])) :
     endif;
 endif;
 $getProducts = $product->listProduct();
-if (!empty($aParam[3]) AND ($aParam[3]!='oskoure')) :
+if (!empty($aParam[3]) AND ($aParam[3]!='oskoure') AND $aParam[3]!='products') :
     $getDetail = $product->detailProduct($aParam[3]);
 endif;
 ?>
