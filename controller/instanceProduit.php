@@ -20,4 +20,7 @@ $getProducts = $product->listProduct();
 if (!empty($aParam[3]) AND ($aParam[3]!='oskoure') AND ($aParam[3]!='products')) :
     $getDetail = $product->detailProduct($aParam[3]);
 endif;
+if (!empty($aParam[3]) AND ($aParam[3]=='products') AND !empty($aParam[4])) :
+    $getDetail = $product->detailProduct($aParam[4]);
+endif;
 ?>
