@@ -2,6 +2,7 @@
 
 $url = '/TD_Groupe/';
 $product = new Produit;
+$product->modifyProduct(1, "test", "desc", 1.56);
 if(!empty($aParam[4])AND($aParam[4]=='oskoure')) :
     $product->modifyProduct($_POST['idProduct'], $_POST['nom'], $_POST['description'], $_POST['prix']);
     header("Location: {$url}product");
