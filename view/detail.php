@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-
+<!-- Affichage du détail du produit via l'objet créer via la requete 2 -->
     <h1><?php echo $getDetail[0]->title;?></h1>
     <p><?php echo $getDetail[0]->description;?></p>
     <p><?php echo $getDetail[0]->price;?></p>

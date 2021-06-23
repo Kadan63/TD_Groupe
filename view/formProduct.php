@@ -10,7 +10,9 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- dans l'action du formulaire on verifie si le param 3 est vide ou non s'il n'est pas vide (cela veut dire qu'il contient un id de produit et donc qu'on et sur la modification) alors on ecrire l'id du produit dans l'url -->
     <form method='post' action="<?php echo $url ?>product/<?php if (!empty($aParam[3])): echo $getDetail[0]->idProduct."/"; endif; ?>oskoure">
+        <!-- Pour cahque champ on attribue une valeur si il y a un id dans l'url, cette valeur sera les données du produit correspondant -->
     <input type="hidden" value="<?php if (!empty($aParam[3])): echo $getDetail[0]->idProduct; endif; ?>" name="idProduct">
         <p>
             <label for="name">Nom</label>

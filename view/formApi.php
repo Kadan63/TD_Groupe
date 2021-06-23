@@ -24,6 +24,9 @@
             <input type="text" name="prix" id="price"/>
         </p>
         <p>
+            <!-- création d'une liste déroulante en recupérant les données depuis la base
+        Le but etant de remplir la liste avec les noms de chaque produits
+    On met une option Ajout sélectionné par defaut dans le but de pouvoir ajouter et modifier depuis l'api avec une seul formulaire-->
             <label for="selectProduct">Produit n° :</label>
             <select id="selectProduct" name="product">
             <option value="ajout" selected>Ajout</option>
