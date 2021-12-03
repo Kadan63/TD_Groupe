@@ -22,7 +22,7 @@ switch ($aParam[2]) {
         break;
 
         case 'api':
-        if (!empty ($aParam[2]) AND $aParam[3]=='products' AND $_SERVER['REQUEST_METHOD']=="POST" AND $_POST['product'] != "ajout") :
+        if (!empty ($aParam[2]) AND $aParam[3]=='products' AND $_SERVER['REQUEST_METHOD']=="PUT" AND !empty($aParam[4])) :
             include 'view/apijsonmodifproduct.php';
             elseif (!empty ($aParam[2]) AND $aParam[3]=='products' AND $_SERVER['REQUEST_METHOD']=="POST"):
                 include 'view/apijsonaddproduct.php';

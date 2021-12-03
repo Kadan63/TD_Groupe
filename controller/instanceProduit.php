@@ -4,7 +4,7 @@ $url = '/TD_Groupe/';
 $product = new Produit;
 // $product->modifyProduct(1, "test", "desc", 1.56);
 // On test l'url pour voir si on trouve un param 3 qui contient l'id et un param 4 "oskoure" qui veut dire qu'on a utilsé le formulaire
-// Si c'est duex condition sont reunis alors on appel la methode pour modifier le produit en récuperant l'id et toute les autres info depuis le tableau $_POST généré par le formulaire
+// Si c'est deux condition sont reunis alors on appel la methode pour modifier le produit en récuperant l'id et toute les autres info depuis le tableau $_POST généré par le formulaire
 if(!empty($aParam[4])AND($aParam[4]=='oskoure')) :
     $product->modifyProduct($_POST['idProduct'], $_POST['nom'], $_POST['description'], $_POST['prix']);
     header("Location: {$url}product");
@@ -33,7 +33,7 @@ endif;
 // Même chose qu'au dessus mais pour l'api cette fois
 // Vu que l'url de l'api est différente les param aussi donc on adapte
 // Ici on verif s'il y a un id et si il y a "products" dans l'url ce qui correspond à l'url de l'api
-// Alors on appelle la méthode qui recupere un produit 
+// Alors on appelle la méthode qui recupere un produit
 if (!empty($aParam[3]) AND ($aParam[3]=='products') AND !empty($aParam[4])) :
     $getDetail = $product->detailProduct($aParam[4]);
 endif;
